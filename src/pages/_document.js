@@ -3,23 +3,15 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 import { useEffect } from "react";
 export default function Document() {
- 
- 
   return (
     <Html lang="en">
       <Head>
-
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta
-          name="application-name"
-          content="admin-panel"
-        />
+        <meta name="application-name" content="admin-panel" />
         <meta name="author" content="admin-panel" />
-       
-       
-       
+
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/images/og.jpg" />
         <link
@@ -32,13 +24,16 @@ export default function Document() {
           href="/images/logo/logo.png"
           type="image/x-icon"
         />
-
-
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <body>
         <Main />
-
       </body>
       <NextScript />
     </Html>

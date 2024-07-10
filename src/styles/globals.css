@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,17 +19,77 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #fff;
+  background-color: #080808;
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  position: relative;
+  max-width: 1284px;
+}
+
+.transition-ease{
+  transition: all 0.3s ease-out 0s;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.divider {
+  background: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  min-height: 1px;
+  max-height: 1px;
+}
+.divider::after {
+  content: "";
+  height: 28px;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.04) 13.72%,
+    rgba(255, 255, 255, 0.1) 50.73%,
+    rgba(255, 255, 255, 0.04) 82.86%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  filter: blur(40px);
+}
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader {
+  font-size: 40px;
+  font-weight: bold;
+  color: white; /* Adjust the color as needed */
+  animation: zoomInOut 2s ease-in-out infinite;
 }
